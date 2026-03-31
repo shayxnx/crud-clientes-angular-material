@@ -1,0 +1,9 @@
+mat-toolbar {
+  width: 100% !important;
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+} 
+
+.spacer {
+    flex: 1 1 auto;
+}

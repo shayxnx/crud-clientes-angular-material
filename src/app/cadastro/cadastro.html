@@ -1,0 +1,79 @@
+<div class="form-div">
+        <form class="mt-60" #clientesFrm="ngForm" (ngSubmit)="salvar()">
+            <mat-card appearance="outlined"> 
+                <mat-card-header>
+                    <mat-card-title>Dados Pessoais</mat-card-title>
+                </mat-card-header>
+                    <div>
+                        <mat-card-content class="mt-20">
+                            <mat-form-field class="full-width">
+                                <mat-label>Nome: *</mat-label>
+                                <input type="text" 
+                                [(ngModel)]="cliente.nome"
+                                name="nome"
+                                    placeholder="Digite seu nome" matInput>
+                            </mat-form-field>
+                        <div>
+                            <mat-form-field class="full-width">
+                                <mat-label>E-mail: *</mat-label>
+                                <input type="text" 
+                                [(ngModel)]="cliente.email"
+                                name="email"
+                                    placeholder="Ex: maria@email.com" matInput  >
+                            </mat-form-field>
+                        </div>
+                         <div class="cpf_div">
+                            <mat-form-field class="full-width" appearance="fill" floatLabel="always">
+                                <mat-label>CPF: *</mat-label>
+                                <input type="text" 
+                                [(ngModel)]="cliente.cpf"
+                                name="cpf"
+                                mask="000.000.000-00"
+                                placeholder="000.000.000-00" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="data_nascimento_div">
+                            <mat-form-field class="full-width" appearance="fill" floatLabel="always">
+                                <mat-label>Data de Nascimento: *</mat-label>
+                                <input type="text" 
+                                [(ngModel)]="cliente.dataNascimento"
+                                name="dataNascimento"
+                                mask="00/00/0000"
+                                placeholder="dd/mm/aaaa" matInput /> 
+                            </mat-form-field>
+                        </div>
+                        </mat-card-content>
+                            <mat-card-actions>
+                               
+                                <div class="botoes_div">
+                                    @if(!atualizando){
+                                        <button matButton="filled" class="ml-5" type="submit" >
+                                            <mat-icon>save</mat-icon>
+                                            Salvar
+                                        </button> 
+                                    }
+                                    @else{
+                                    <button matButton="elevated">
+                                        <mat-icon>refresh</mat-icon>
+                                        Atualizar
+                                    </button>
+                                    <button type="reset" matButton="text" class="ml-5" (click)="cancelar()">
+                                       <mat-icon>cancel</mat-icon>
+                                       Cancelar
+                                   </button>
+                                   }
+                                
+                                    <button type="reset" matButton="text" class="ml-5" >
+                                        <mat-icon>backspace</mat-icon>
+                                        Limpar
+                                    </button>
+
+                                   
+                                </div>
+                        </mat-card-actions>
+                    
+                    </div>
+            </mat-card>
+        </form>
+</div>
+

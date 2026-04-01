@@ -42,6 +42,31 @@
                                 placeholder="dd/mm/aaaa" matInput /> 
                             </mat-form-field>
                         </div>
+
+                        <div class="uf_div">
+                            <mat-form-field class="full-width" appearance="fill" floatLabel="always">
+                                <mat-label>UF: *</mat-label>
+                                <mat-select>
+                                    @for (uf of estados; track uf.sigla) {
+                                        <mat-option
+                                        [value]="uf.sigla"> {{ uf.sigla }} </mat-option>
+                                    }   
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="municipios_div">
+                            <mat-form-field class="full-width" appearance="fill" floatLabel="always">
+                                <mat-label>Município: *</mat-label>
+                                <mat-select (selectionChange)="carregarMunicipios($event)">
+                                    @for (municipio of municipios; track municipio.nome) {
+                                        <mat-option
+                                        [value]="municipio.nome"> {{ municipio.nome }} </mat-option>
+                                    }   
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
                         </mat-card-content>
                             <mat-card-actions>
                                

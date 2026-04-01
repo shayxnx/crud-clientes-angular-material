@@ -91,8 +91,10 @@ carregarMunicipios(event: MatSelectChange) {
   this.brasilApiService.listarMunicipios(ufSelecionada).subscribe({
     next: listaMunicipios => this.municipios = listaMunicipios,
     error: erro => console.log("Ocorreu um erro: ", erro)
-  })
 
+  
+  })
+  console.log("Disparou: " + event.value);
 }
 
   salvar() {

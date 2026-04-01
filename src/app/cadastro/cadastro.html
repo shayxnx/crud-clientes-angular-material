@@ -46,7 +46,7 @@
                         <div class="uf_div">
                             <mat-form-field class="full-width" appearance="fill" floatLabel="always">
                                 <mat-label>UF: *</mat-label>
-                                <mat-select>
+                                <mat-select (selectionChange)="carregarMunicipios($event)">
                                     @for (uf of estados; track uf.sigla) {
                                         <mat-option
                                         [value]="uf.sigla"> {{ uf.sigla }} </mat-option>
@@ -58,7 +58,7 @@
                         <div class="municipios_div">
                             <mat-form-field class="full-width" appearance="fill" floatLabel="always">
                                 <mat-label>Município: *</mat-label>
-                                <mat-select (selectionChange)="carregarMunicipios($event)">
+                                <mat-select >
                                     @for (municipio of municipios; track municipio.nome) {
                                         <mat-option
                                         [value]="municipio.nome"> {{ municipio.nome }} </mat-option>
